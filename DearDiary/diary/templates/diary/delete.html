@@ -1,0 +1,20 @@
+{% extends "diary/main.html" %}
+
+{% block content %}
+
+<div class="delete_block">
+    <div class="card_warn">
+        <h1>Warning</h1>
+        <p>Are yout sure you want to delete this?</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="btn_block">
+                <input class="btn" type="submit" value="Yes">
+                <a class="btn_cancel" href="{% url 'home' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

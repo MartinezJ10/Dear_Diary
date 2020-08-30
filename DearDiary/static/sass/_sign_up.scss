@@ -1,0 +1,71 @@
+.sign_up {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    height: 100vh;
+
+    .left {
+        background-color: $prim;
+        border-radius: 0 $rad $rad 0;
+
+        &>div {
+            justify-content: center;
+            @include center;
+            flex-direction: column;
+        }
+
+        .poster {
+            height: 88%;
+        }
+
+        img {
+            width: 75%;
+        }
+
+        p {
+            color: $nav_text;
+            font-size: $sub;
+            text-align: center;
+            padding: 1rem 1.3rem;
+        }
+
+        .logo {
+            @include logo;
+        }
+    }
+
+    .right {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+        .form {
+
+            &>div {
+                @include center;
+                flex-direction: column;
+                padding: .4rem 0;
+            }
+
+            input[type=text],
+            input[type=password],
+            input[type=email] {
+                @include forms(40%);
+                padding: 6px 3px 6px 6px;
+            }
+
+            .btn {
+                @include btn($prim);
+            }
+
+            .messages {
+                @include messages;
+            }
+
+            h2 {
+                font-size: $title_min;
+                padding-bottom: 1rem;
+            }
+
+        }
+    }
+}

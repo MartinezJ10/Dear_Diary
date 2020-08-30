@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Sign Up - DearDiary</title>
+</head>
+
+<body>
+
+    <div class="sign_up">
+        <div class="left">
+            <div class="logo">
+                <h2 class="logo">DearDiary</h2>
+            </div>
+            <div class="poster">
+                <img src="{% static 'svg/signup.svg' %}" alt="">
+                <p>"One advantage in keeping a diary is that you become
+                    aware with reassuring clarity of the changes which
+                    you constantly suffer"</p>
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                <form action="" method="POST" class="form" autocomplete="off">
+                    {% csrf_token %}
+                    <div>
+                        <h2>Sign Up</h2>
+                    </div>
+                    <div>
+                        {{form.username.label}}
+                        {{form.username}}
+                    </div>
+                    <div>
+                        {{form.email.label}}
+                        {{form.email}}
+                    </div>
+                    <div>
+                        {{form.password1.label}}
+                        {{form.password1}}
+                    </div>
+                    <div>
+                        {{form.password2.label}}
+                        {{form.password2}}
+                        <a href="{% url 'login' %}">Already have an account?</a>
+
+                    </div>
+                    <div>
+                        <input type="submit" value="Sign Up" class="btn">
+                        {{form.errors}}
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+
+}
+
+body {
+    font-family: $regular;
+}
+
+ul {
+    list-style: none;
+}
+
+//MIXINS
+@mixin btn($btn_colour) {
+    background: $btn_colour;
+    padding: .6rem 2rem;
+    color: $nav_text;
+    border-style: none;
+    font-family: $regular;
+    border-radius: $rad;
+    font-size: $btn_Text;
+    cursor: pointer;
+    transition: $hover_trans;
+
+    &:hover {
+        opacity: $hover_op;
+    }
+}
+
+@mixin forms($width) {
+    width: $width;
+    border-radius: $rad;
+    border: solid 2px $prim;
+    font-family: $regular;
+    font-size: $content;
+    margin-top: 1.7rem;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin logo {
+    font-family: $logo;
+    font-size: $title;
+    font-weight: lighter;
+    color: $nav_text;
+}
+
+@mixin messages {
+    background-color: rgba(96, 21, 255, 0.3);
+    color: $text;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: $page_content;
+    border-radius: $rad;
+}

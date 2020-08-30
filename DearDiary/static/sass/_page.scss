@@ -1,0 +1,45 @@
+.main_block {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    box-shadow: $shadow;
+    padding: 1.5rem;
+    border-radius: $rad;
+    margin: 2rem 5rem;
+
+    .block_header {
+        display: flex;
+        align-items: center;
+
+        h3 {
+            font-size: $title_min;
+            font-weight: 100;
+        }
+
+        a {
+            color: $prim;
+            padding-right: 1.5rem;
+        }
+    }
+
+    p {
+        font-size: $page_content;
+        margin: 0.4rem 0;
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    h4 {
+        font-size: $sub;
+        margin: 0.4rem 0;
+    }
+
+    .arrow {
+        transition: $hover_trans;
+
+        &:hover {
+            transform: translateX(-7px);
+        }
+    }
+}

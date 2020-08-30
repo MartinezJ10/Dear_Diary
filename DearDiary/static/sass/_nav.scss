@@ -1,0 +1,34 @@
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    align-items: center;
+    text-align: center;
+    height: 5.5rem;
+    background-color: $prim;
+    color: $nav_text;
+    border-radius: 0 0 $rad $rad;
+
+    a {
+        color: $nav_text;
+
+    }
+
+    .nav_content {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: $sub;
+        align-items: center;
+        padding: 0 2rem;
+
+        ul {
+            display: flex;
+            align-items: center;
+
+        }
+    }
+
+    .nav_logo {
+        @include logo()
+    }
+}

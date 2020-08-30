@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div>
+        <a class="nav_logo" href="{% url 'home' %}">DearDiary</a>
+    </div>
+    <div>
+        <ul class="nav_content">
+            <li>Hi, {{request.user}}</li>
+            <li><a href="#0" class="swap">
+                    <i class="fas fa-lg fa-moon"></i>
+                </a></li>
+            <li><a href="{% url 'logout' %}">logout</a></li>
+        </ul>
+    </div>
+</nav>

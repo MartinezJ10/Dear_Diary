@@ -1,0 +1,41 @@
+//LIGHT MODE -DEFAULT
+$bg: #FFFFFF;
+$prim: #6015FF;
+$secon: #121212;
+$text: #121212;
+//DARK MODE
+/*
+$_bg: #121212;
+$prim: #BB86FC;
+$secon: #1F1F1F; //APPLY FOR TEXT 
+$contrast: #1F1A24;
+$text: #E8E8E9;
+*/
+$nav_text: #E8E8E9;
+//GENERAL
+$rad: 20px;
+$shadow: 0 4px 8px 0 rgba(96, 21, 255, 0.3);
+$hover_op: 0.7;
+$hover_trans: 0.4s;
+$hover_darker: #DDDDDD;
+
+//FONT
+@font-face {
+    font-family: mustardo;
+    src: url(../fonts/mustardo.ttf);
+}
+
+@font-face {
+    font-family: Product Sans;
+    src: url(../fonts/ProductSansRegular.ttf);
+}
+
+$logo: mustardo;
+$regular: Product Sans;
+//FONT SIZES
+$sub:1.5rem;
+$btn_Text:1.3rem;
+$title: 3rem;
+$title_min: 2.2rem;
+$content: 1rem;
+$page_content: 1.2rem;

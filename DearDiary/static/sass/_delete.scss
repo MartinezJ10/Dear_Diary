@@ -1,0 +1,29 @@
+.delete_block {
+    height: 80vh;
+    @include center;
+    justify-content: center;
+
+    .card_warn {
+        padding: 2rem;
+        border-radius: $rad;
+        box-shadow: $shadow;
+
+        .btn {
+            @include btn($prim);
+        }
+
+        .btn_cancel {
+            @include btn($text);
+            margin-left: .8rem;
+        }
+
+        h1 {
+            color: $prim;
+        }
+
+        p {
+            padding: 1rem 0;
+            font-size: $content;
+        }
+    }
+}

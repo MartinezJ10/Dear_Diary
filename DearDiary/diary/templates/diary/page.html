@@ -1,0 +1,19 @@
+{% extends "diary/main.html" %}
+
+{% block content %}
+
+<div class="main_block">
+    <div class="block_header">
+        <a href="{% url 'home' %}"><i class="fas fa-2x fa-arrow-left arrow"></i></a>
+        <h3>{{page.title}}</h3>
+    </div>
+    <div>
+        <p>{{page.date_page}}</p>
+        <h4 id="mood">{{page.mood}}</h4>
+    </div>
+    <div>
+        <p>{{page.content}} </p>
+    </div>
+</div>
+
+{% endblock %}

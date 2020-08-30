@@ -1,0 +1,60 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    align-items: center;
+    height: 80vh;
+
+
+    .form_block {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+
+        .in_block {
+            @include center;
+            flex-direction: column;
+        }
+
+        .btn_block {
+            @include center;
+            justify-content: center;
+
+            a {
+                margin-left: 1.5rem;
+            }
+        }
+
+        h3 {
+            font-size: $sub;
+        }
+
+        input[type=text] {
+            padding: 8px;
+            @include forms(75%);
+        }
+
+        textarea {
+            padding: 8px 0 0 8px;
+            resize: none;
+            height: 20rem;
+            @include forms(75%);
+        }
+
+        select {
+            padding: 4px;
+            cursor: pointer;
+            @include forms(40%);
+        }
+    }
+
+    .btn {
+        @include btn($prim);
+    }
+
+    .btn_cancel {
+        @include btn($text);
+    }
+}

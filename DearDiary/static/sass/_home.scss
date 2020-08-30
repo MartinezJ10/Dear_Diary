@@ -1,0 +1,138 @@
+.home_body {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: $text;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: row dense;
+
+    .container {
+        width: 70%;
+        margin: auto;
+
+        .latest {
+            display: flex;
+            text-align: left;
+            justify-content: left;
+            margin: 1rem 0;
+        }
+
+        .card_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 3rem;
+
+            .card {
+                grid-column-start: 1;
+                align-items: center;
+                justify-content: center;
+                display: grid;
+                grid-template-columns: 4fr 1fr;
+                box-shadow: $shadow;
+                width: 100%;
+                padding: 1.5rem 0 1.5rem 1.5rem;
+                border-radius: $rad;
+                cursor: pointer;
+                color: $text;
+
+                .mother_link {
+                    color: $text;
+                }
+
+                h3 {
+                    font-size: $sub;
+                    font-weight: 100;
+                }
+
+                p {
+                    font-size: $content;
+                    margin: 0.2rem 0;
+                }
+
+                #mood {
+                    font-weight: bold;
+                }
+
+                .settings {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .dropup {
+                        position: relative;
+                        display: inline-block;
+                        color: $prim;
+
+                    }
+
+                    .dropup-content {
+                        display: none;
+                        position: absolute;
+                        bottom: .3rem;
+                        left: 1.5rem;
+                        background-color: $nav_text;
+                        min-width: 6rem;
+                        box-shadow: $shadow;
+                        z-index: 1;
+                    }
+
+                    /* Links inside the dropup */
+                    .dropup-content .drop_link {
+                        color: $text;
+                        padding: .5rem .7rem;
+                        display: block;
+                        font-size: $content;
+                    }
+
+                    /* Change color of dropup links on hover */
+                    .dropup-content .drop_link:hover {
+                        background-color: $hover_darker;
+                    }
+
+                    /* Show the dropup menu on hover */
+                    .dropup:hover .dropup-content {
+                        display: block;
+                    }
+                }
+
+                transition: $hover_trans ease-in;
+
+                &:hover {
+                    box-shadow: 1px 1px 23px rgba(96, 21, 255, 0.3);
+                    transform: translateY(-7px);
+                }
+            }
+        }
+
+        .messages {
+            @include messages;
+        }
+    }
+
+
+    .add_container {
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        z-index: 999;
+        cursor: pointer;
+
+
+        .icon_holder {
+            background: $prim;
+            border-radius: $rad;
+            width: 5rem;
+            height: 5rem;
+            box-shadow: $shadow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: $hover_trans;
+            color: $nav_text;
+
+            &:hover {
+                opacity: $hover_op;
+            }
+        }
+    }
+}
