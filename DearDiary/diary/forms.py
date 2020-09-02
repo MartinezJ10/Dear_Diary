@@ -8,11 +8,8 @@ from .models import DiaryPage
 class AddPageForm(forms.ModelForm):
     class Meta:
         model = DiaryPage
-        fields = [
-            "title",
-            "content",
-            "mood"
-        ]
+        fields = "__all__"
+        exclude = ["customer"]
 
 
 class CreateUserForm(UserCreationForm):

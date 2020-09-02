@@ -1,48 +1,46 @@
-{% extends "diary/main.html" %}
-
-{% block content %}
+{% extends "diary/main.html" %} {% block content %}
 <div class="home_body">
-    <div class="container">
+  <div class="container">
+    {% for message in messages %}
+    <p class="messages">{{message}}</p>
+    {% endfor %}
 
-        {% for message in messages %}
-        <p class="messages">{{message}}</p>
-        {% endfor %}
-
-        <div class="latest">
-            <h1>Latest</h1>
-        </div>
-        <div class="card_container">
-            {%for page in pages %}
-
-            <div class="card">
-                <a class="mother_link" href=" {% url 'page' page.id %}">
-
-                    <div>
-                        <h3>{{page.title}}</h3>
-                        <p>{{page.date_page}}</p>
-                        <h4 id="mood">{{page.mood}}</h4>
-                    </div>
-                    <div class="settings">
-                        <div class="dropup">
-                            <i class="fas fa-2x fa-cog"></i>
-                            <div class="dropup-content">
-                                <a class="drop_link" href="{% url 'delete_page' page.id %}">Delete</a>
-                                <a class="drop_link" href="{% url 'update_page' page.id %}">Edit</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            {%endfor%}
-
-
-        </div>
-        <div class="add_container">
-            <a href="{% url 'add_page' %}" class="icon_holder">
-                <i class="fas fa-lg fa-plus"></i>
-            </a>
-        </div>
+    <div class="latest">
+      <h1>Latest</h1>
     </div>
+    <div class="card_container">
+      {%for page in pages %}
+
+      <div class="card">
+        <a class="mother_link" href=" {% url 'page' page.id %}">
+          <div>
+            <h3>{{page.title}}</h3>
+            <p>{{page.date_page}}</p>
+            <h4 id="mood">{{page.mood}}</h4>
+          </div>
+          <div class="settings">
+            <div class="dropup">
+              <i class="fas fa-2x fa-cog"></i>
+              <div class="dropup-content">
+                <a class="drop_link" href="{% url 'delete_page' page.id %}"
+                  >Delete</a
+                >
+                <a class="drop_link" href="{% url 'update_page' page.id %}"
+                  >Edit</a
+                >
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="add_container">
+      <a href="{% url 'add_page' %}" class="icon_holder">
+        <i class="fas fa-lg fa-plus"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

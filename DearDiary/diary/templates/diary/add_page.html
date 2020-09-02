@@ -1,31 +1,29 @@
-{% extends "diary/main.html" %}
-
-{% block content %}
+{% extends "diary/main.html" %} {% block content %}
 
 <form method="POST">
-    {% csrf_token %}
-    <div class="wrapper">
-        <div class="form_block">
-            <div class="in_block">
-                <h3>Title of your day</h3>
-                {{ form.title }}
-            </div>
-            <div class="in_block">
-                <h3>How was your day?</h3>
-                {{ form.content }}
-            </div>
-        </div>
-        <div class="form_block">
-            <div class="in_block">
-                <h3>Today's mood</h3>
-                {{form.mood}}
-            </div>
-            <div class="btn_block">
-                <input class="btn" type="submit" value="Save">
-                <a class="btn_cancel" href="{% url 'home' %}">Cancel</a>
-            </div>
-        </div>
+  {% csrf_token %}
+  <div class="wrapper">
+    <div class="form_block">
+      <div class="in_block">
+        <h3>Title of your day</h3>
+        {{ form.title }}
+      </div>
+      <div class="in_block">
+        <h3>How was your day?</h3>
+        {{ form.content }}
+      </div>
     </div>
+    <div class="form_block">
+      <div class="in_block">
+        <h3>Today's mood</h3>
+        {{form.mood}}
+      </div>
+      <div class="btn_block">
+        <input class="btn" type="submit" value="Save" />
+        <a class="btn_cancel" href="{% url 'home' %}">Cancel</a>
+      </div>
+    </div>
+  </div>
 </form>
 
 {% endblock %}

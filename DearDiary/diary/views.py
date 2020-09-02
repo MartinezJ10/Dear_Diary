@@ -54,8 +54,7 @@ def loginPage(request):
 
 @login_required(login_url='login')
 def home(request):
-
-    pages = DiaryPage.objects.all().order_by('-date_page')
+    pages = request.user.customer.diarypage_set.all().order_by('-date_page')
 
     context = {"pages": pages}
 
@@ -66,7 +65,9 @@ def home(request):
 def add_page(request):
     form = AddPageForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        fs = form.save(commit=False)
+        fs.customer = request.user.customer
+        fs.save()
         return redirect("/")
 
     context = {
