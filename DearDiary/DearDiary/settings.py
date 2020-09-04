@@ -25,7 +25,7 @@ SECRET_KEY = '-s6w3g!23+rg+hy20kc2^v+**u5kgj50cljgd$xqu1s#gi_=37'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django-deardiary.herokuapp.com/',
+ALLOWED_HOSTS = ['django-deardiary.herokuapp.com',
                  '127.0.0.1', "localhost"]
 
 
